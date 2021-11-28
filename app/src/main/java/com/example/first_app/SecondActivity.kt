@@ -2,15 +2,12 @@ package com.example.first_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SecondActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_NAME = "EXTRA_NAME"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -43,14 +40,15 @@ class SecondActivity : AppCompatActivity() {
             ),
         )
 
-        val rvProdi = findViewById<RecyclerView>(R.id.rv_prodi)
+        val rv = findViewById<RecyclerView>(R.id.rv_prodi)
         val adapter = ProdiAdapter(dataProdi) {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra(DetailActivity.EXTRA_PRODI, it)
             startActivity(intent)
         }
-        rvProdi.layoutManager = LinearLayoutManager(this)
-        rvProdi.setHasFixedSize(true)
-        rvProdi.adapter = adapter
+
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.setHasFixedSize(true)
+        rv.adapter = adapter
     }
 }

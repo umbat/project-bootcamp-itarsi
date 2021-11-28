@@ -17,12 +17,10 @@ class ProdiAdapter(
 
     inner class ProdiViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNamaProdi = itemView.findViewById<TextView>(R.id.tv_nama_prodi)
-        val tvDescProdi = itemView.findViewById<TextView>(R.id.tv_desc_prodi)
         val ivFotoProdi = itemView.findViewById<ImageView>(R.id.iv_foto)
 
         fun bind(prodi: Prodi) {
             tvNamaProdi.text = prodi.nama
-            tvDescProdi.text = prodi.desc
             ivFotoProdi.load(prodi.foto) {
                 transformations(CircleCropTransformation())
             }

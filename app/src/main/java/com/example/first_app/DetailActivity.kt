@@ -18,7 +18,7 @@ class DetailActivity : AppCompatActivity() {
         const val EXTRA_PRODI = "EXTRA_PRODI"
     }
 
-    override fun OnCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
