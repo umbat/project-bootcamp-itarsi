@@ -7,6 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class Prodi(
     val nama: String,
     val desc: String,
-    val foto: String,
+    val foto: Int,
     val link: String
 ) : Parcelable

@@ -33,7 +33,6 @@ class DetailActivity : AppCompatActivity() {
         prodi?.let { prodi ->
             ivDetailImage.load(prodi.foto) {
                 crossfade(true)
-                transformations(CircleCropTransformation())
             }
             tvDetailNama.text = prodi.nama
             tvDetailDesc.text = prodi.desc
@@ -54,7 +53,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_favorite -> {
-                Toast.makeText(this, "Anda menyukai prodi ini", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Anda menyukai prodi ini", Toast.LENGTH_SHORT).show()
             }
             R.id.menu_about -> {
                 val intent = Intent(this, AboutActivity::class.java)

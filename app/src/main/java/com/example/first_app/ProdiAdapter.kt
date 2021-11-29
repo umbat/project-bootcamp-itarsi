@@ -17,13 +17,11 @@ class ProdiAdapter(
 
     inner class ProdiViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNamaProdi = itemView.findViewById<TextView>(R.id.tv_nama_prodi)
-        val ivFotoProdi = itemView.findViewById<ImageView>(R.id.iv_foto)
+        val ivFotoProdi = itemView.findViewById<ImageView>(R.id.iv_prodi)
 
         fun bind(prodi: Prodi) {
             tvNamaProdi.text = prodi.nama
-            ivFotoProdi.load(prodi.foto) {
-                transformations(CircleCropTransformation())
-            }
+            ivFotoProdi.load(prodi.foto)
 
             itemView.setOnClickListener {onClickListener(prodi)}
         }

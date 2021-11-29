@@ -11,18 +11,22 @@
         android:theme="@style/Theme.Firstapp">
         <activity
             android:name=".AboutActivity"
+            android:parentActivityName=".DetailActivity"
             android:exported="true" />
         <activity
             android:name=".HelpActivity"
+            android:parentActivityName=".DetailActivity"
             android:exported="true" />
         <activity
             android:name=".DetailActivity"
+            android:parentActivityName=".SecondActivity"
             android:exported="true" />
         <activity
             android:name=".SecondActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/MainActivityTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
