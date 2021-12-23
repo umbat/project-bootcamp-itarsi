@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
-import coil.transform.CircleCropTransformation
 
 class DetailActivity : AppCompatActivity() {
     companion object {

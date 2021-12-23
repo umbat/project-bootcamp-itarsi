@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 
-class ProdiAdapter(
+class ListAdapter(
     val listProdi: List<Prodi>,
     val onClickListener: (Prodi) -> Unit
 ) :
-    RecyclerView.Adapter<ProdiAdapter.ProdiViewHolder>() {
+    RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
-    inner class ProdiViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNamaProdi = itemView.findViewById<TextView>(R.id.tv_nama_prodi)
         val ivFotoProdi = itemView.findViewById<ImageView>(R.id.iv_prodi)
 
@@ -27,12 +27,12 @@ class ProdiAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdiViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_prodi, parent, false)
-        return ProdiViewHolder(view)
+        return ListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ProdiViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listProdi[position])
     }
 

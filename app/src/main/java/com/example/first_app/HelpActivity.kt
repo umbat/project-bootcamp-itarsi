@@ -11,7 +11,6 @@ class HelpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_help)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Help"
 
         val helpLogo = findViewById<ImageView>(R.id.iv_help_logo)

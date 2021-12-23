@@ -47,7 +47,7 @@ class SecondActivity : AppCompatActivity() {
         val name = intent.getStringExtra(EXTRA_NAME) ?:"Sahabat"
         val tvGreeting = findViewById<TextView>(R.id.tv_greeting)
         val rv = findViewById<RecyclerView>(R.id.rv_prodi)
-        val adapter = ProdiAdapter(dataProdi) {
+        val adapter = ListAdapter(dataProdi) {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra(DetailActivity.EXTRA_PRODI, it)
             startActivity(intent)

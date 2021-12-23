@@ -11,7 +11,6 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "About"
 
         val aboutImages = findViewById<ImageView>(R.id.iv_about_image)
