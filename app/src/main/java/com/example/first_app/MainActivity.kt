@@ -3,8 +3,6 @@ package com.example.first_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.*
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val btnAction = findViewById<Button>(R.id.sebuah_button)
         val etNama = findViewById<EditText>(R.id.et_nama)
 
-        ivFoto.load(R.drawable.foto) {
+        ivFoto.load(R.drawable.stmkg) {
             crossfade(true)
             transformations(CircleCropTransformation())
         }

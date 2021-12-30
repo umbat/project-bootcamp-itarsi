@@ -8,34 +8,49 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 class ListAdapter(
-    val listProdi: List<Prodi>,
-    val onClickListener: (Prodi) -> Unit
+    private val listProdi: List<Prodi>
 ) :
     RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
-    inner class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvNamaProdi = itemView.findViewById<TextView>(R.id.tv_nama_prodi)
-        val ivFotoProdi = itemView.findViewById<ImageView>(R.id.iv_prodi)
+    private lateinit var onItemClickCallback: OnItemClickCallback
 
-        fun bind(prodi: Prodi) {
-            tvNamaProdi.text = prodi.nama
-            ivFotoProdi.load(prodi.foto)
-
-            itemView.setOnClickListener {onClickListener(prodi)}
-        }
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_prodi, parent, false)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
+        val view =
+            LayoutInflater.from(viewGroup.context).inflate(R.layout.list_prodi, viewGroup, false)
         return ListViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind(listProdi[position])
+        val prodi = listProdi[position]
+
+        Glide.with(holder.itemView.context)
+            .load(prodi.logoprodi)
+            .apply(RequestOptions().override(55, 55))
+            .into(holder.ivLogoProdi)
+
+        holder.tvNameProdi.text = prodi.nama
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listProdi[holder.adapterPosition]) }
     }
 
-    override fun getItemCount(): Int = listProdi.size
-
+    override fun getItemCount(): Int {
+        return listProdi.size
     }
+
+    inner class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val ivLogoProdi = itemView.findViewById<ImageView>(R.id.iv_prodi)
+        val tvNameProdi = itemView.findViewById<TextView>(R.id.tv_nama_prodi)
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Prodi)
+    }
+}

@@ -10,7 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 
 class GridAdapter(
     val listProdi: ArrayList<Prodi>) :
-    RecyclerView.Adapter<GridProdiAdapter.GridViewHolder>() {
+    RecyclerView.Adapter<GridAdapter.GridViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -25,7 +25,7 @@ class GridAdapter(
 
     override fun onBindViewHolder(holder: GridViewHolder, position: Int) {
         Glide.with(holder.itemView.context)
-            .load(listProdi[position].foto)
+            .load(listProdi[position].logoprodi)
             .apply(RequestOptions().override(250,250))
             .into(holder.imgPhoto)
 

@@ -16,7 +16,7 @@ class HelpActivity : AppCompatActivity() {
         val helpLogo = findViewById<ImageView>(R.id.iv_help_logo)
         val helpVersion = findViewById<TextView>(R.id.tv_help_version)
 
-        helpLogo.load(R.drawable.foto) {
+        helpLogo.load(R.drawable.stmkg) {
             crossfade(true)
             transformations(CircleCropTransformation())
         }
