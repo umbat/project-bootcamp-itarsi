@@ -48,17 +48,17 @@ object ProdiData {
         R.drawable.klimat,
         R.drawable.geof,
         R.drawable.ins,
-        R.drawable.Resimen
+        R.drawable.resimen
     )
 
     private val prodiFotoPimpinan = intArrayOf (
-        R.drawable.I_Nyoman_Sukanta,
-        R.drawable.Dwikorita_Karnawati,
-        R.drawable.ic_baseline_person_24,
-        R.drawable.ic_baseline_person_24,
-        R.drawable.ic_baseline_person_24,
-        R.drawable.ic_baseline_person_24,
-        R.drawable.Ahmadi_Musa
+        R.drawable.i_nyoman_sukanta,
+        R.drawable.dwikorita_karnawati,
+        R.drawable.icon,
+        R.drawable.icon,
+        R.drawable.icon,
+        R.drawable.icon,
+        R.drawable.ahmadi_musa
     )
 
     private val prodiLink = arrayOf (

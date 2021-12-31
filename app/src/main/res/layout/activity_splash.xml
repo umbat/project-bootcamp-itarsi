@@ -4,30 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcad03"
+    android:background="#FFF89A"
     tools:context=".SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="STMKG APP"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white"
+        android:text="Introducing"
+        app:layout_constraintBottom_toTopOf="@id/tv_stmkg"
+        app:layout_constraintEnd_toEndOf="@id/tv_stmkg"
+        app:layout_constraintStart_toStartOf="@id/tv_stmkg"
+        android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold|italic"/>
 
     <TextView
+        android:id="@+id/tv_stmkg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="made by Umbat Jaya"
+        android:text="STMKG"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="24dp"
-        android:textColor="@color/white"
-        android:textSize="16sp"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold|italic"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

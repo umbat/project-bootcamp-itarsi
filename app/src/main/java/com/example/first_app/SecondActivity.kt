@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SecondActivity : AppCompatActivity() {
-    private lateinit var tvGreeting: TextView
     private lateinit var rvProdi: RecyclerView
     private var title = "Mode List"
     private var list: ArrayList<Prodi> = arrayListOf()
@@ -27,10 +26,10 @@ class SecondActivity : AppCompatActivity() {
         setActionBarTitle(title)
         supportActionBar?.title = "STMKG"
 
-        val name = intent.getStringExtra(EXTRA_NAME)
+        val name = intent.getStringExtra(EXTRA_NAME) ?:"Sahabat"
+        val tvGreeting = findViewById<TextView>(R.id.tv_greeting)
 
-        tvGreeting.text = "Selamat Datang $name"
-        tvGreeting = findViewById(R.id.tv_greeting)
+        tvGreeting.text = "Selamat Datang $name!"
         rvProdi = findViewById(R.id.rv_prodi)
         rvProdi.setHasFixedSize(true)
 
@@ -40,10 +39,10 @@ class SecondActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
         rvProdi.layoutManager = LinearLayoutManager(this)
-        val listProdiAdapter = ListAdapter(list)
+        val listProdiAdapter = ListProdiAdapter(list)
         rvProdi.adapter = listProdiAdapter
 
-        listProdiAdapter.setOnItemClickCallback(object : ListAdapter.OnItemClickCallback{
+        listProdiAdapter.setOnItemClickCallback(object : ListProdiAdapter.OnItemClickCallback{
             override fun onItemClicked(data: Prodi) {
                 showSelectedProdi(data)
             }
@@ -52,10 +51,10 @@ class SecondActivity : AppCompatActivity() {
 
     private fun showRecyclerGrid() {
         rvProdi.layoutManager = GridLayoutManager(this, 2)
-        val gridProdiAdapter = GridAdapter(list)
+        val gridProdiAdapter = GridProdiAdapter(list)
         rvProdi.adapter = gridProdiAdapter
 
-        gridProdiAdapter.setOnItemClickCallback(object : GridAdapter.OnItemClickCallback{
+        gridProdiAdapter.setOnItemClickCallback(object : GridProdiAdapter.OnItemClickCallback{
             override fun onItemClicked(data: Prodi) {
                 showSelectedProdi(data)
             }

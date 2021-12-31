@@ -3,6 +3,7 @@ package com.example.first_app
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -10,7 +11,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val TIMEOUT = 1000L
+        val TIMEOUT = 2000L
 
         Handler(mainLooper).postDelayed({
             val intent = Intent(this, MainActivity::class.java)

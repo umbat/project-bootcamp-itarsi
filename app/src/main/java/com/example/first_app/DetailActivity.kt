@@ -34,17 +34,17 @@ class DetailActivity : AppCompatActivity() {
 
         val prodi = intent.getParcelableExtra<Prodi>(EXTRA_PRODI)
 
-        prodi?.let { prodi ->
+        prodi?.let {prodi ->
             ivDetailImage.load(prodi.logoprodi) {
-                crossfade(true)
-            }
-            ivFotoPimpinan.load(prodi.fotopimpinan) {
                 crossfade(true)
             }
             tvDetailNama.text = prodi.nama
             tvDetailDesc.text = prodi.desc
             tvDetailTitel.text = prodi.titelpimpinan
             tvNamaPimpinan.text = prodi.namapimpinan
+            ivFotoPimpinan.load(prodi.fotopimpinan) {
+                crossfade(true)
+            }
 
             btnLink.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)

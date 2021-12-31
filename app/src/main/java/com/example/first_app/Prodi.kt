@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Prodi(
-    val nama: String = "",
-    val desc: String = "",
-    val logoprodi: Int = 0,
-    val titelpimpinan: String = "",
-    val fotopimpinan: Int = 0,
-    val namapimpinan: String = "",
-    val link: String = ""
+    var nama: String = "",
+    var desc: String = "",
+    var titelpimpinan: String = "",
+    var namapimpinan: String = "",
+    var link: String = "",
+    var logoprodi: Int = 0,
+    var fotopimpinan: Int = 0
 ) : Parcelable

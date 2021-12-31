@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         tvNama.text = "Sekolah Tinggi Meteorologi Klimatologi dan Geofisika"
         tvLokasi.text = "Tangerang Selatan"
         tvDesc.text =
-            "Sekolah Tinggi Meteorologi Klimatologi dan Geofisika (STMKG) adalah Perguruan Tinggi Kedinasan di lingkungan Badan Meteorologi, Klimatologi, dan Geofisika (BMKG), yang mempersiapkan kader tenaga ahli tingkat madya, guna mendukung tugas Badan Meteorologi, Klimatologi, dan Geofisika sebagai lembaga acuan utama di Indonesia dalam memberikan informasi meteorologi, klimatologi, geofisika, dan kualitas udara, yang secara teknis akademik, pembinaannya dilakukan oleh Menteri Pendidikan Nasional dan secara teknis operasional dilakukan oleh Kepala Badan Meteorologi, Klimatologi, dan Geofisika."
+            "Aplikasi ini merupakan pintu bagi masyarakat umum yang belum mengetahui seluk-beluk tentang STMKG. Selamat menjelajah!"
 
         btnAction.setOnClickListener {
             val namaPengguna = etNama.text.toString()
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(SecondActivity.EXTRA_NAME, namaPengguna)
                 startActivity(intent)
             } else {
-                Toast.makeText(this,"Nama harus diisi!",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Nama harus diisi",Toast.LENGTH_SHORT).show()
             }
         }
     }
